@@ -22,12 +22,11 @@ public class Lesson {
     @Column
     private LocalTime endt;
     @ManyToOne
-    @JoinColumn(name = "LessonID",nullable = false)
+    @JoinColumn(name = "teacherID",nullable = false)
     private Teacher teacher;
     @OneToMany(mappedBy = "lesson",cascade = CascadeType.ALL)
     private List<Grade> grades;
     @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "hometaskID",nullable = true)
     private Hometask hometask;
     public long getId() {
         return id;
