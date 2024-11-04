@@ -26,7 +26,7 @@ public class RegistrationController {
         try
         {
             users.createUser(user);
-            return "registration";
+            return "redirect:/login";
         }
         catch (Exception ex)
         {
