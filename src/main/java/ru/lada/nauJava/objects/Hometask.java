@@ -17,6 +17,7 @@ public class Hometask {
     @JoinColumn(name = "teacherID",referencedColumnName = "id",nullable = false)
     private Teacher teacher;
     @OneToOne(mappedBy = "hometask")
+    @JoinColumn(name = "LessonID")
     private Lesson lesson;
     public long getId() {
         return id;
