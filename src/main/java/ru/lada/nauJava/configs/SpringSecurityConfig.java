@@ -21,8 +21,8 @@ public class SpringSecurityConfig {
     public SecurityFilterChain SecurityFilter(HttpSecurity http) throws Exception {
         http.
                 authorizeHttpRequests((request) -> request
-                        .requestMatchers("/swagger-ui/*","/registration", "/login", "/logout").permitAll()
-                        .requestMatchers("/grades/**", "/hometasks/**", "/lessons/**", "/students/**", "/teachers/**", "/custom/**").hasRole("ADMIN")
+                        .requestMatchers("/getReport/*","/createReport","/registration", "/login", "/logout","/createReport").permitAll()
+                        .requestMatchers("/swagger-ui/*","/grades/**", "/hometasks/**", "/lessons/**", "/students/**", "/teachers/**", "/custom/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .formLogin(Customizer.withDefaults());
         return http.build();
