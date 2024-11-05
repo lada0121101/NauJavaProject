@@ -78,7 +78,7 @@ public class ReportServiceImpl implements ReportService {
                 {
             Report c = reports.findById(id).orElse(null);
             if( c == null){
-               throw new IllegalStateException("Пользователя с таким id не существует");
+               throw new IllegalStateException("Отчёта с таким id не существует");
             }
             else if(res!= "Ошибка"){
                 c.setContent(res);

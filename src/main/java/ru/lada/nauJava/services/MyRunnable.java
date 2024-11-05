@@ -23,6 +23,11 @@ public class MyRunnable implements Runnable {
     public void run(){
         long start = System.currentTimeMillis();
         count = repos.count();
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         duration = System.currentTimeMillis()- start;
     }
 }
