@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User createUser(User user) throws Exception {
-        if(!users.findById(user.getId()).isEmpty()){
+        if(!users.findByUsername(user.getUsername()).isEmpty()){
             throw new Exception("Пользователь уже существует");
         }
         users.save(user);
